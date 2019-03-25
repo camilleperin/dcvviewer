@@ -1,7 +1,6 @@
 # dcvviewer
 
-Download Nice DCV client package for ubuntu from http://www.nice-software.com/download/dcv
-
+Prerequisite:
 Copy a valid session file named file.dcv next to the Dockerfile
 
 ## Build
