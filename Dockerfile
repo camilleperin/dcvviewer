@@ -19,17 +19,20 @@ RUN apt-get update \
        libssl1.0.0 \
        libssl1.1 \
        libxml2 \
+       wget \
 && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
-COPY nice-dcv-viewer_2017.3.683-1_amd64.ubuntu1804.deb .
+
+# Download DCV client from Nice wep page
+RUN wget --no-check-certificate https://d1uj6qtbmh3dt5.cloudfront.net/client/nice-dcv-viewer_2017.3.683-1_amd64.ubuntu1804.deb
 RUN dpkg --install nice-dcv-viewer_2017.3.683-1_amd64.ubuntu1804.deb
-COPY file.dcv .
 
 RUN useradd camille
 USER camille
 ENV HOME /home/camille
 
-CMD dcvviewer file.dcv
+CMD dcvviewer
 
 # docker run -it --rm -e DISPLAY=$DISPLAY -e DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME:$HOME --name gnome-builder dcvviewer
+# docker run -it --rm -e DISPLAY=$DISPLAY -e DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME:$HOME --name gnome-builder dcvviewer dcvviewer ~/mySessionfile.dcv
