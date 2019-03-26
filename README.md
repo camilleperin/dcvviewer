@@ -1,8 +1,5 @@
 # dcvviewer
 
-Prerequisite:
-Copy a valid session file named file.dcv next to the Dockerfile
-
 ## Build
 docker build -t dcvviewer .
 
