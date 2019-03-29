@@ -1,5 +1,7 @@
 # dcvviewer
 
+Simple docker image able to run a Nice DCV client upon Ubuntu + Gnome
+
 ## Build
 docker build -t dcvviewer .
 
