@@ -1,6 +1,6 @@
 # dcvviewer
 
-Simple docker image able to run a Nice DCV client (dcvviewer) upon Ubuntu + Gnome
+Simple docker image able to run a NICE DCV client (dcvviewer) upon Ubuntu + Gnome
 
 ## Build
 ```
