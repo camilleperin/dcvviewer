@@ -2,7 +2,7 @@
 
 cd `dirname $0`
 
-lastDCVSessionFile=`ls ~/Downloads/*.dcv --sort=time | head -n 1`
+lastDCVSessionFile=`ls ~/downloads/*.dcv --sort=time | head -n 1`
 cp "$lastDCVSessionFile" /tmp/file.dcv
 
 docker build -t dcvviewer .
